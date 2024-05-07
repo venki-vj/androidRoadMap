@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Roadmap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+    <style>
+        /* Custom CSS styles */
+        /* You can add your own custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: auto;
+            scroll-behavior: smooth;
+        }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            
+        }
+
+        .card {
+            margin-bottom: 30px;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Android Roadmap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduction">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#basic-concepts">Basic Concepts</a>
+                    </li>
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome to Android Roadmap</h1>
+            <p class="lead">Your guide to mastering Android development</p>
+            <a class="btn btn-light btn-lg" href="#introduction" role="button">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="container">
+        <h2 class="section-heading">Introduction to Android Development</h2>
+        <p>
+            Android is a popular mobile operating system developed by Google. It powers billions of devices worldwide,
+            ranging from smartphones and tablets to smartwatches and smart TVs.
+        </p>
+        <!-- Add more content as needed -->
+    </section>
+
+    <!-- Basic Concepts Section -->
+    <section id="basic-concepts" class="container">
+        <h2 class="section-heading">Basic Concepts</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Activities</h5>
+                        <p class="card-text">Activities represent the different screens in an Android application. <a href="https://developer.android.com/guide/components/activities/intro-activities" target="_blank">learn more</a></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Fragments</h5>
+                        <p class="card-text">Fragments are reusable UI components that can be combined to create
+                            flexible layouts. <a href="https://developer.android.com/guide/fragments" target="_blank">learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Services</h5>
+                        <p class="card-text">Services are background tasks that run independently of the UI.
+                            <a href="https://developer.android.com/develop/background-work/services" target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Intents</h5>
+                        <p class="card-text">Intents are messages that allow components to request functionality from other components, such as starting an activity, broadcasting a message, or invoking a service. Intents can be explicit (targeting a specific component) or implicit (allowing the system to determine the appropriate component).
+                            <a href="https://developer.android.com/guide/components/intents-filters" target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Permissions</h5>
+                        <p class="card-text">Android apps require permissions to access sensitive device resources like the camera, location, contacts, etc. Developers must declare these permissions in the manifest file and request them at runtime on devices running Android 6.0 (API level 23) or higher.
+                            <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank" rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Adapters and RecyclerViews</h5>
+                        <p class="card-text">Adapters are used to populate views, such as lists or grids, with data from a data source. RecyclerView is a more flexible and efficient replacement for ListView and GridView, commonly used to display large datasets efficiently.
+                            <a href="https://guides.codepath.com/android/using-the-recyclerview" target="_blank" rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="data-management" class="container">
+        <h2 class="section-heading">Data Management</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SharedPreferences</h5>
+                        <p class="card-text">SharedPreferences is a lightweight mechanism for storing primitive data types (such as integers, booleans, strings) in key-value pairs. It is commonly used for storing simple app preferences and settings.
+                             <a href="https://www.digitalocean.com/community/tutorials/android-shared-preferences-example-tutorial" target="_blank">learn more</a></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">File Storage</h5>
+                        <p class="card-text">Android provides APIs for reading from and writing to files in internal and external storage. Internal storage is private to the app and can be used to store sensitive data, while external storage is accessible to other apps and users.
+                             <a href="https://www.digitalocean.com/community/tutorials/android-internal-storage-example-tutorial" target="_blank">learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQLite Database</h5>
+                        <p class="card-text">SQLite is a lightweight relational database management system embedded in Android. It allows developers to create and manage structured data in the form of tables, rows, and columns. SQLite is commonly used for storing structured data locally within an app.
+                            <a href="https://www.digitalocean.com/community/tutorials/android-sqlite-database-example-tutorial" target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Room Persistence Library</h5>
+                        <p class="card-text">Room is a SQLite object mapping library provided by the Android Jetpack architecture components. It provides an abstraction layer over SQLite database operations, simplifying database access and management through the use of annotated Java or Kotlin data objects.
+                            <a href="https://codingwithmitch.com/blog/sqlite-and-the-room-persistence-library/" target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Content Providers</h5>
+                        <p class="card-text">Content Providers are Android components that allow apps to share data with other apps securely. They provide a standard interface for accessing and managing data across different applications and can be used to expose data from SQLite databases or other data sources.
+                            <a href="https://developer.android.com/guide/topics/providers/content-provider-basics" target="_blank" rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Network Communication</h5>
+                        <p class="card-text">Android apps often need to communicate with remote servers to fetch
+                             or send data over the network. This is typically done using HTTP-based networking libraries
+                              like Retrofit, Volley, or OkHttp, which handle network requests and responses asynchronously.
+                            <a href="https://www.scaler.com/topics/android/networking-in-android/" target="_blank" rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Data Management Section -->
+    <section id="data-management" class="container">
+        <h2 class="section-heading">Data Management</h2>
+        <p>
+            Android offers various mechanisms for managing data within applications, including SQLite databases,
+            SharedPreferences, and Content Providers.
+        </p>
+        <!-- Add more content as needed -->
+    </section>
+
+    <!-- Advanced Topics Section -->
+    <section id="advanced-topics" class="container">
+        <h2 class="section-heading">Advanced Topics</h2>
+        <p>
+            Advanced topics in Android development include Dependency Injection, Reactive Programming, and Kotlin
+            Coroutines.
+        </p>
+        <!-- Add more content as needed -->
+    </section>
+
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-1NvCKPBHjHzWtzAvLEPzeRUZeFQNMFN8otvMvQzYj6Tu8Nax3w8tcZjAtqU5SK1C"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-b4gt1jrGC7Jh4AgTPSdUtOBvfO8shC3MSwgm4G/5B2Zvksr8YPcp1Op6L6z53YlN"
+        crossorigin="anonymous"></script>
+       
+</body>
+
+</html>
