@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Android Roadmap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-        crossorigin="anonymous">
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
         /* Custom CSS styles */
         /* You can add your own custom styles here */
@@ -25,17 +24,100 @@
         .section-heading {
             font-size: 2rem;
             margin-bottom: 30px;
-            
         }
 
         .card {
+            transition: box-shadow 0.3s ease;
             margin-bottom: 30px;
-            
+        }
+
+        .card:hover {
+            box-shadow: 0 0 20px #007bff;
+        }
+
+
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            /* Initially hidden */
+            z-index: 1000;
+            background-color: #343a40;
+            padding: 20px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: left 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .sidebar.ribbon {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            width: 50px;
+            height: 100px;
+            /* Adjust width as needed */
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .sidebar.ribbon button {
+            width: 100%;
+            height: 50px;
+            /* Adjust height as needed */
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #17a2b8;
         }
     </style>
 </head>
 
 <body>
+
+    <div class="sidebar ribbon" id="minimized-sidebar">
+        <!-- Sidebar content -->
+        <button class="btn btn-dark" onclick="toggleSidebar()" style="border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;">☰</button>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="expanded-sidebar">
+        <ul>
+            <button class="btn btn-dark" onclick="toggleSidebar()">☰</button>
+            <li><a href="#introduction" data-offset="50">Introduction</a></li>
+            <li><a href="#refresh-java" data-offset="50">Refresh on Java</a></li>
+            <li><a href="#android-app" data-offset="50">Android App</a></li>
+            <li><a href="#data-management" data-offset="50">Data Management</a></li>
+            <li><a href="#android-basics" data-offset="50">Android Device</li>
+
+        </ul>
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,17 +127,6 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#introduction">Introduction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#basic-concepts">Basic Concepts</a>
-                    </li>
-                    <!-- Add more menu items as needed -->
-                </ul>
-            </div> -->
         </div>
     </nav>
 
@@ -64,7 +135,7 @@
         <div class="container text-center">
             <h1 class="display-4">Welcome to Android Roadmap</h1>
             <p class="lead">Your guide to mastering Android development</p>
-            <a class="btn btn-light btn-lg" href="#introduction" role="button">Get Started</a>
+            <a class="btn btn-light btn-lg" href="#introduction" role="button" data-offset="50">Get Started</a>
         </div>
     </div>
 
@@ -78,15 +149,93 @@
         <!-- Add more content as needed -->
     </section>
 
+    <!-- Refresher Section -->
+    <section id="refresh-java" class="container">
+        <h2 class="section-heading">Before you get started on android...</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(11)"> -->
+                <div class=" card">
+                    <div class="card-body">
+                        <h5 class="card-title">Object-Oriented Programming</h5>
+                        <!-- <div id="linkPanel11" style="display: none;"> -->
+                        <p class=" card-text">Object-Oriented Programming is a
+                            methodology or paradigm to design a
+                            program using
+                            classes
+                            and
+                            objects.
+                            <br>
+
+                            <a href="https://www.javatpoint.com/java-oops-concepts" target="_blank">learn
+                                more</a>
+                        </p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(12)"> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Exception Handling</h5>
+                        <!-- <div id="linkPanel12" style="display: none;"> -->
+                        <p class="card-text">Exception handling is the process of responding to unwanted or unexpected
+                            events when a computer program runs.<br>
+
+                            <a href="https://www.javatpoint.com/exception-handling-in-java" target="_blank">learn
+                                more</a>
+
+                        </p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(13)"> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Multi-Threading</h5>
+                        <!-- <div id="linkPanel13" style="display: none;"> -->
+                        <p class="card-text">Multithreading is a programming concept in which the application can create
+                            a small unit of tasks to execute in parallel.<br>
+                            <a href="https://www.geeksforgeeks.org/java-multithreading-tutorial/" target="_blank">learn
+                                more</a>
+                        </p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(14)"> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Collections</h5>
+                        <!-- <div id="linkPanel14" style="display: none;"> -->
+                        <p class="card-text">The Collection in Java is a framework that provides an architecture to
+                            store and
+                            manipulate the group of objects.<br>
+                            <a href="https://www.javatpoint.com/collections-in-java/" target="_blank">learn more</a>
+                            <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
     <!-- Basic Concepts Section -->
-    <section id="basic-concepts" class="container">
-        <h2 class="section-heading">Basic Concepts</h2>
+    <section id="android-app" class="container">
+        <h2 class="section-heading">Android Application Components</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Activities</h5>
-                        <p class="card-text">Activities represent the different screens in an Android application. <a href="https://developer.android.com/guide/components/activities/intro-activities" target="_blank">learn more</a></a></p>
+                        <p class="card-text">Activities represent the different screens in an Android application. <a
+                                href="https://developer.android.com/guide/components/activities/intro-activities"
+                                target="_blank">learn more</a></a></p>
                     </div>
                 </div>
             </div>
@@ -95,7 +244,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Fragments</h5>
                         <p class="card-text">Fragments are reusable UI components that can be combined to create
-                            flexible layouts. <a href="https://developer.android.com/guide/fragments" target="_blank">learn more</a></p>
+                            flexible layouts. <a href="https://developer.android.com/guide/fragments"
+                                target="_blank">learn more</a></p>
                     </div>
                 </div>
             </div>
@@ -104,7 +254,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Services</h5>
                         <p class="card-text">Services are background tasks that run independently of the UI.
-                            <a href="https://developer.android.com/develop/background-work/services" target="_blank">learn more</a>
+                            <a href="https://developer.android.com/develop/background-work/services"
+                                target="_blank">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -115,8 +266,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Intents</h5>
-                        <p class="card-text">Intents are messages that allow components to request functionality from other components, such as starting an activity, broadcasting a message, or invoking a service. Intents can be explicit (targeting a specific component) or implicit (allowing the system to determine the appropriate component).
-                            <a href="https://developer.android.com/guide/components/intents-filters" target="_blank">learn more</a>
+                        <p class="card-text">Intents are messages that allow components to request functionality from
+                            other components, such as starting an activity, broadcasting a message, or invoking a
+                            service. Intents can be explicit (targeting a specific component) or implicit (allowing the
+                            system to determine the appropriate component).
+                            <a href="https://developer.android.com/guide/components/intents-filters"
+                                target="_blank">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -125,8 +280,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Permissions</h5>
-                        <p class="card-text">Android apps require permissions to access sensitive device resources like the camera, location, contacts, etc. Developers must declare these permissions in the manifest file and request them at runtime on devices running Android 6.0 (API level 23) or higher.
-                            <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank" rel="noopener noreferrer">learn more</a>
+                        <p class="card-text">Android apps require permissions to access sensitive device resources like
+                            the camera, location, contacts, etc. Developers must declare these permissions in the
+                            manifest file and request them at runtime on devices running Android 6.0 (API level 23) or
+                            higher.
+                            <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -135,14 +294,18 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Adapters and RecyclerViews</h5>
-                        <p class="card-text">Adapters are used to populate views, such as lists or grids, with data from a data source. RecyclerView is a more flexible and efficient replacement for ListView and GridView, commonly used to display large datasets efficiently.
-                            <a href="https://guides.codepath.com/android/using-the-recyclerview" target="_blank" rel="noopener noreferrer">learn more</a>
+                        <p class="card-text">Adapters are used to populate views, such as lists or grids, with data from
+                            a data source. RecyclerView is a more flexible and efficient replacement for ListView and
+                            GridView, commonly used to display large datasets efficiently.
+                            <a href="https://guides.codepath.com/android/using-the-recyclerview" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="data-management" class="container">
         <h2 class="section-heading">Data Management</h2>
         <div class="row">
@@ -150,8 +313,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">SharedPreferences</h5>
-                        <p class="card-text">SharedPreferences is a lightweight mechanism for storing primitive data types (such as integers, booleans, strings) in key-value pairs. It is commonly used for storing simple app preferences and settings.
-                             <a href="https://www.digitalocean.com/community/tutorials/android-shared-preferences-example-tutorial" target="_blank">learn more</a></a></p>
+                        <p class="card-text">SharedPreferences is a lightweight mechanism for storing primitive data
+                            types (such as integers, booleans, strings) in key-value pairs. It is commonly used for
+                            storing simple app preferences and settings.
+                            <a href="https://www.digitalocean.com/community/tutorials/android-shared-preferences-example-tutorial"
+                                target="_blank">learn more</a></a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -159,8 +326,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">File Storage</h5>
-                        <p class="card-text">Android provides APIs for reading from and writing to files in internal and external storage. Internal storage is private to the app and can be used to store sensitive data, while external storage is accessible to other apps and users.
-                             <a href="https://www.digitalocean.com/community/tutorials/android-internal-storage-example-tutorial" target="_blank">learn more</a></p>
+                        <p class="card-text">Android provides APIs for reading from and writing to files in internal and
+                            external storage. Internal storage is private to the app and can be used to store sensitive
+                            data, while external storage is accessible to other apps and users.
+                            <a href="https://www.digitalocean.com/community/tutorials/android-internal-storage-example-tutorial"
+                                target="_blank">learn more</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -168,8 +339,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">SQLite Database</h5>
-                        <p class="card-text">SQLite is a lightweight relational database management system embedded in Android. It allows developers to create and manage structured data in the form of tables, rows, and columns. SQLite is commonly used for storing structured data locally within an app.
-                            <a href="https://www.digitalocean.com/community/tutorials/android-sqlite-database-example-tutorial" target="_blank">learn more</a>
+                        <p class="card-text">SQLite is a lightweight relational database management system embedded in
+                            Android. It allows developers to create and manage structured data in the form of tables,
+                            rows, and columns. SQLite is commonly used for storing structured data locally within an
+                            app.
+                            <a href="https://www.digitalocean.com/community/tutorials/android-sqlite-database-example-tutorial"
+                                target="_blank">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -180,8 +355,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Room Persistence Library</h5>
-                        <p class="card-text">Room is a SQLite object mapping library provided by the Android Jetpack architecture components. It provides an abstraction layer over SQLite database operations, simplifying database access and management through the use of annotated Java or Kotlin data objects.
-                            <a href="https://codingwithmitch.com/blog/sqlite-and-the-room-persistence-library/" target="_blank">learn more</a>
+                        <p class="card-text">Room is a SQLite object mapping library provided by the Android Jetpack
+                            architecture components. It provides an abstraction layer over SQLite database operations,
+                            simplifying database access and management through the use of annotated Java or Kotlin data
+                            objects.
+                            <a href="https://codingwithmitch.com/blog/sqlite-and-the-room-persistence-library/"
+                                target="_blank">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -190,8 +369,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Content Providers</h5>
-                        <p class="card-text">Content Providers are Android components that allow apps to share data with other apps securely. They provide a standard interface for accessing and managing data across different applications and can be used to expose data from SQLite databases or other data sources.
-                            <a href="https://developer.android.com/guide/topics/providers/content-provider-basics" target="_blank" rel="noopener noreferrer">learn more</a>
+                        <p class="card-text">Content Providers are Android components that allow apps to share data with
+                            other apps securely. They provide a standard interface for accessing and managing data
+                            across different applications and can be used to expose data from SQLite databases or other
+                            data sources.
+                            <a href="https://developer.android.com/guide/topics/providers/content-provider-basics"
+                                target="_blank" rel="noopener noreferrer">learn more</a>
                         </p>
                     </div>
                 </div>
@@ -201,32 +384,102 @@
                     <div class="card-body">
                         <h5 class="card-title">Network Communication</h5>
                         <p class="card-text">Android apps often need to communicate with remote servers to fetch
-                             or send data over the network. This is typically done using HTTP-based networking libraries
-                              like Retrofit, Volley, or OkHttp, which handle network requests and responses asynchronously.
-                            <a href="https://www.scaler.com/topics/android/networking-in-android/" target="_blank" rel="noopener noreferrer">learn more</a>
+                            or send data over the network. This is typically done using HTTP-based networking libraries
+                            like Retrofit, Volley, or OkHttp, which handle network requests and responses
+                            asynchronously.
+                            <a href="https://www.scaler.com/topics/android/networking-in-android/" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Data Management Section -->
-    <section id="data-management" class="container">
-        <h2 class="section-heading">Data Management</h2>
-        <p>
-            Android offers various mechanisms for managing data within applications, including SQLite databases,
-            SharedPreferences, and Content Providers.
-        </p>
-        <!-- Add more content as needed -->
-    </section>
 
-    <!-- Advanced Topics Section -->
-    <section id="advanced-topics" class="container">
-        <h2 class="section-heading">Advanced Topics</h2>
-        <p>
-            Advanced topics in Android development include Dependency Injection, Reactive Programming, and Kotlin
-            Coroutines.
-        </p>
+
+    <!-- Android Basics Section -->
+    <section id="android-basics" class="container">
+        <h2 class="section-heading">Get to know your Device</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(21)""> -->
+                <div class=" card">
+                    <div class="card-body">
+                        <h5 class="card-title">Android Boot Process</h5>
+                        <!-- <div id="linkPanel21" style="display: none;"> -->
+                        <p class=" card-text">Android Boot Process includes the following six steps:
+                            <br>
+                        <ul>
+                            <li>Boot ROM</li>
+                            <li>Bootloader</li>
+                            <li>Kernel</li>
+                            <li>Init</li>
+                            <li>Zygote</li>
+                            <li>System Server</li>
+                        </ul><br>
+
+                        </p>
+                        <a href="https://www.geeksforgeeks.org/android-boot-process/" target="_blank">learn more</a>
+                        <br><a href="https://www.youtube.com/watch?v=m1Ag4eGlWbU" target="_blank">YouTube
+                            playlist</a>
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(22)"> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Android Architecture</h5>
+                        <!-- <div id="linkPanel22" style="display: none;"> -->
+                        <p class="card-text">The main components of android architecture are following:
+                        <ul>
+                            <li>Applications</li>
+                            <li>Application Framework
+                            </li>
+                            <li>Android Runtime</li>
+                            <li>Platform Libraries</li>
+                            <li>Hardware Abstraction Layer</li>
+                            <li>Linux Kernel</li>
+                        </ul>
+
+
+                        <a href="https://developer.android.com/guide/platform">learn more</a>
+                        <!-- Add other fundamental resources here -->
+                        </p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- <div class="col-md-4" onclick="toggleLinkPanel(23)"> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Android Application LifeCycle</h5>
+                        <!-- <div id="linkPanel23" style="display: none;"> -->
+                        <p class="card-text">There are 7 lifecycle methods of android activity:
+                        <ul>
+                            <li>OnCreate</li>
+                            <li>OnStart</li>
+                            <li>OnResume</li>
+                            <li>OnPause</li>
+                            <li>OnRestart</li>
+                            <li>OnStop</li>
+                            <li>OnDestroy</li>
+                        </ul>
+
+                        <a href="https://www.javatpoint.com/android-life-cycle-of-activity" target="_blank">learn
+                            more</a>
+                        <!-- Add other fundamental resources here -->
+
+                        </p>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Add more content as needed -->
     </section>
 
@@ -241,7 +494,110 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-b4gt1jrGC7Jh4AgTPSdUtOBvfO8shC3MSwgm4G/5B2Zvksr8YPcp1Op6L6z53YlN"
         crossorigin="anonymous"></script>
-       
+
+    <script>
+        let isSidebarVisible = true;
+        let lastScrollTop = 0;
+
+        window.onscroll = function () { scrollFunction() };
+
+        document.getElementById("minimized-sidebar").addEventListener("mouseenter", function () {
+            expandSidebar();
+        });
+
+        document.getElementById("expanded-sidebar").addEventListener("mouseleave", function () {
+            minimizeSidebar();
+        });
+
+        const expandedSidebar = document.getElementById("expanded-sidebar");
+        const minimizedSidebar = document.getElementById("minimized-sidebar");
+
+        function expandSidebar() {
+
+            expandedSidebar.style.left = "0";
+            minimizedSidebar.style.left = "-250px";
+            isSidebarVisible = true;
+        }
+
+        function minimizeSidebar() {
+
+            expandedSidebar.style.left = "-250px";
+            minimizedSidebar.style.left = "0";
+            isSidebarVisible = false;
+        }
+
+        function scrollFunction() {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down
+                if (!isSidebarVisible) {
+                    minimizeSidebar();
+                }
+            } else {
+                // Scrolling up
+                if (isSidebarVisible && currentScrollTop > 20) {
+                    minimizeSidebar();
+                }
+            }
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+        }
+
+        function toggleSidebar() {
+            if (isSidebarVisible) {
+                minimizeSidebar();
+            } else {
+                expandSidebar();
+            }
+        }
+
+        document.getElementById("sidebar-ribbon").addEventListener("click", function () {
+            toggleSidebar();
+        });
+    </script>
+    <!--
+    <script>
+        function toggleLinkPanel(stepNumber) {
+            const linkPanel = document.getElementById(`linkPanel${stepNumber}`);
+            linkPanel.style.display = linkPanel.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+    -->
+    <script>
+        // Function to handle smooth scrolling
+        function scrollToTarget(targetId, offset = 0) {
+            const target = document.getElementById(targetId);
+            if (target) {
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth' // Smooth scrolling animation
+                });
+            }
+        }
+
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const offset = parseInt(this.getAttribute('data-offset')) || 0;
+                scrollToTarget(targetId, offset);
+                minimizeSidebar();
+            });
+        });
+
+        // Smooth scrolling for "Get Started" button
+        document.querySelector('.jumbotron a').addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const offset = parseInt(this.getAttribute('data-offset')) || 0;
+            scrollToTarget(targetId, offset);
+        });
+    </script>
+
+
 </body>
 
 </html>
