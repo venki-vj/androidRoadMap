@@ -191,6 +191,14 @@
             /* Darker blue outline on hover */
         }
 
+        #get-started {
+            padding-top: 60px;
+            /* Adjust to match the height of the navigation bar */
+            max-height: calc(100vh - 450px);
+            /* Subtract the height of the hero section from the viewport height */
+        }
+
+
         /* Button style */
         .btn {
             background-color: transparent;
@@ -211,29 +219,42 @@
             /* White text color on hover */
         }
 
+        .button-section {
+            display: flex;
+            justify-content:space-between;/* Align buttons horizontally to the center */
+            gap: 20px;/* Add gap between each button */
+            height: max-content;
+            margin: 150px 0;
+
+        }
+        
+
         @media (min-width: 1024px) {
             .main-content {
-                margin-left: 250px;
+                margin-left: 150px;
                 /* Adjust as needed */
             }
         }
-      
 
-        @media (min-width: 320px)  and (max-width :430px){
+
+        @media (min-width: 320px) and (max-width :430px) {
             .main-content {
                 margin-left: 10px;
                 /* Adjust as needed */
             }
-            .hero  {
+
+            .hero {
                 width: 140vw;
-            /* Height of navigation bar */
+                /* Height of navigation bar */
             }
-            .android-tools_update{
-            left: 5%;
-            top: auto;
-            right: auto;
-                
+
+            .android-tools_update {
+                left: 5%;
+                top: auto;
+                right: auto;
+
             }
+
             .android-hero_droid {
                 height: 146px;
                 transform: translate(-20%, 0%);
@@ -241,14 +262,28 @@
                 top: auto;
                 right: auto;
             }
-            .main-content{
+
+            .main-content {
                 width: 130vw;
             }
-            footer{
+
+            footer {
                 width: 140vw;
             }
-            .sidebar{
+
+            .sidebar {
                 height: 140vh;
+            }
+            .button-section{
+                margin: 100px 0 ;
+            }
+            .navbar-title{
+                display: none;
+            }
+            .navbar-img{
+                margin-right: 10px;
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
@@ -269,8 +304,8 @@
             </a>
             <!-- Logo and Title -->
             <div class="flex items-center">
-                <img src="assets/android.svg" alt="Android Icon" class="h-8 ">
-                <h1 class="text-lg font-bold">Android Development Roadmap</h1>
+                <img src="assets/android.svg" alt="Android Icon" class="h-8 navbar-img">
+                <h1 class="text-lg font-bold navbar-title">Android Development Roadmap</h1>
             </div>
 
         </div>
@@ -330,8 +365,29 @@
 
 
     <!-- Main Content -->
-    <main class="main-content ml-72 p-6">
+    <main class="main-content  p-6">
         <!-- Basic Concepts Section -->
+        <section id="get-started" class="container mb-3 ">
+            <h2 class="text-2xl font-bold mb-2">Dive into ...</h2>
+            <div class="button-section ">
+                <button
+                    class="border border-gray-500 text-black font-bold mr-2 w-1/4 py-2 px-4 rounded-full transition-transform transform hover:scale-105 hover:bg-green-600 hover:text-white">
+                    Java
+                </button>
+
+                <button
+                    class="border border-gray-500 text-black font-bold mr-2 w-1/4 py-2 px-4 rounded-full transition-transform transform hover:scale-105 hover:bg-green-600 hover:text-white">
+                    Android
+                </button>
+
+                <button
+                    class="border border-gray-500 text-black font-bold mr-2 w-1/4 py-2 px-4 rounded-full transition-transform transform hover:scale-105 hover:bg-green-600 hover:text-white">
+                    CI/CD
+                </button>
+            </div>
+
+
+        </section>
         <section id="basic-concepts" class="container">
             <h2 class="text-3xl font-bold mb-2">Basic Concepts</h2>
             <div class="flex flex-wrap -mx-4 ">
