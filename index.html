@@ -11,6 +11,10 @@
     <!-- Linking custom CSS -->
     <link href="styles.css" rel="stylesheet">
     <style>
+        
+        html {
+            scroll-behavior: smooth;
+        }
         /* Custom styles */
 
         /* Styling for sidebar */
@@ -129,7 +133,24 @@
                 z-index: -1;
             }
         }
+        .sidebar-content {
+            padding-top: 150px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: calc(100vh - 64px); /* Adjust the height to fit within the viewport, considering the navbar height */
+        }
+        .sidebar-content::-webkit-scrollbar {
+            display: none;
+        }
 
+        /* For Firefox */
+        .sidebar-content {
+            scrollbar-width: none; /* Hide scrollbar */
+        }
+
+        /* Optional: Ensure the content is still scrollable */
+        .sidebar-content {
+            -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer and Edge */
+        }
         /* Custom styles */
 
         /* Styling for navigation bar */
@@ -198,6 +219,7 @@
             /* Subtract the height of the hero section from the viewport height */
         }
 
+      
 
         /* Button style */
         .btn {
@@ -248,11 +270,20 @@
                 /* Height of navigation bar */
             }
 
+            iframe {
+                padding: 10px;
+                width: 320px;
+                height: 260px;
+            }
+
             .android-tools_update {
                 left: 5%;
                 top: auto;
                 right: auto;
 
+            }
+            .sidebar-content {
+                max-height: 140vh ; /* Adjust the height to fit within the viewport, considering the navbar height */
             }
 
             .android-hero_droid {
@@ -336,27 +367,41 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
-        <div class="p-6">
-            <h2 class="text-xl font-bold mb-4">Android Concepts</h2>
+        <div class="p-6 sidebar-content  ">
+
+            <!--------------   Java concepts sidebar    ------------------->
+            <h2 class="text-xl font-bold mb-4">JAVA Concepts</h2>
             <ul class="sidebar-menu">
-                <li class="mb-2"><a href="#introduction">Introduction</a></li>
-                <li class="mb-2 dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleSubMenu(this)">Fundamentals</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#activities">Activities</a></li>
-                        <li><a href="#fragments">Fragments</a></li>
-                        <!-- Add more subtopics as needed -->
-                    </ul>
-                </li>
-                <li class="mb-2 dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleSubMenu(this)">UI Design</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#responsive-layouts">Responsive Layouts</a></li>
-                        <li><a href="#animations">Animations</a></li>
-                        <!-- Add more subtopics as needed -->
-                    </ul>
-                </li>
-                <!-- Add more top-level topics with or without subtopics -->
+                <li class="mb-2"><a href="#OOP's">OOP's</a></li>
+                <li class="mb-2"><a href="#ExceptionHandling">Exception Handling</a></li>
+                <li class="mb-2"><a href="#CollectionsFramework">Collections Framework</a></li>
+                <li class="mb-2"><a href="#Concurrency">Concurrency</a></li>
+                <li class="mb-2"><a href="#FileI/O">File I/O</a></li>
+                <li class="mb-2"><a href="#Networking">Networking</a></li>
+                <li class="mb-2"><a href="#JavaMemoryManagement">Java Memory Management</a></li>
+                <li class="mb-2"><a href="#Generics">Generics</a></li>
+                <li class="mb-2"><a href="#JavaNativeInterface(JNI)">Java Native Interface (JNI)</a></li>
+            </ul>
+
+            <!--------------   Android concepts sidebar    ------------------->
+            <h2 class="text-xl font-bold  mt-4">Android Concepts</h2>
+            <h5 class=" font-bold mb-4 ">Basic Concepts</h3> 
+            <ul class="sidebar-menu">
+                <li class="mb-2"><a href="#Activities">Activities</a></li>
+                <li class="mb-2"><a href="#Fragments">Fragments</a></li>
+                <li class="mb-2"><a href="#Services">Services</a></li>
+                <li class="mb-2"><a href="#Intents">Intents</a></li>
+                <li class="mb-2"><a href="#Permissions">Permissions</a></li>
+                <li class="mb-2"><a href="#AdaptersandRecyclerViews">Adapters and RecyclerViews</a></li>
+            </ul>
+            <h5 class=" font-bold mb-2 mt-4">Data Management</h3> 
+            <ul class="sidebar-menu">
+                <li class="mb-2"><a href="#SharedPreferences">SharedPreferences</a></li>
+                <li class="mb-2"><a href="#FileStorage">File Storage</a></li>
+                <li class="mb-2"><a href="#SQLiteDatabase">SQLite Database</a></li>
+                <li class="mb-2"><a href="#RoomPersistenceLibrary">Room Persistence Library</a></li>
+                <li class="mb-2"><a href="#ContentProviders">Content Providers</a></li>
+                <li class="mb-2"><a href="#NetworkCommunication">Network Communication</a></li>
             </ul>
         </div>
     </aside>
@@ -371,7 +416,8 @@
             <h2 class="text-2xl font-bold mb-2">Dive into ...</h2>
             <div class="button-section ">
                 <button
-                    class="border border-gray-500 text-black font-bold mr-2 w-1/4 py-2 px-4 rounded-full transition-transform transform hover:scale-105 hover:bg-green-600 hover:text-white">
+                    class="border border-gray-500 text-black font-bold mr-2 w-1/4 py-2 px-4 rounded-full transition-transform transform hover:scale-105 hover:bg-green-600 hover:text-white" 
+                    >
                     Java
                 </button>
 
@@ -388,12 +434,110 @@
 
 
         </section>
+
         <section id="basic-concepts" class="container">
-            <h2 class="text-3xl font-bold mb-2">Basic Concepts</h2>
+            <h2 class="text-7xl font-bold mb-6" >JAVA</h2>
             <div class="flex flex-wrap -mx-4 ">
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Activities</h5>
+                        <h5 class="text-xl font-bold mb-4" id="OOP's">Object-Oriented Programming (OOP)</h5>
+                        <p class="card-text">while object-oriented programming is about creating objects that contain both data and methods. <a
+                                href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/"
+                                target="_blank">learn more</a></a></p>
+
+                                <!-- <iframe width="360" height="215" src="https://www.youtube.com/embed/SJw3Nu_h8kk?si=06ZYn6xESRJ9UxTe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="ExceptionHandling">Exception Handling</h5>
+                        <p class="card-text">Java Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc. 
+                            <a href="https://www.geeksforgeeks.org/exceptions-in-java/"
+                                target="_blank">learn more</a></p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="CollectionsFramework">Collections Framework</h5>
+                        <p class="card-text">Any group of individual objects that are represented as a single unit is known as a Java Collection of Objects.
+                            <a href="https://www.geeksforgeeks.org/collections-in-java-2/"
+                                target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="Concurrency">Concurrency</h5>
+                        <p class="card-text">Concurrency is the ability of a program to execute multiple tasks simultaneously. 
+                            It enables the efficient utilization of system resources and can improve the overall performance and responsiveness of the application.
+                            <a href="https://www.bairesdev.com/blog/java-concurrency/"
+                                target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="FileI/O">File I/O</h5>
+                        <p class="card-text">Java brings various Streams with its I/O package that helps the user to perform all the input-output operations.
+                            These streams support all the types of objects, data-types, characters, files etc to fully execute the I/O operations.
+                            <a href="https://www.geeksforgeeks.org/java-io-input-output-in-java-with-examples/" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="Networking">Networking</h5>
+                        <p class="card-text">Networking is the backbone for communication between different devices and systems in the programming world.
+                            Java, a flexible and widely used programming language, provides comprehensive tools and modules that enable seamless networking.
+                            <a href="https://www.scaler.com/topics/networking-in-java/" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="JavaMemoryManagement">Java Memory Management</h5>
+                        <p class="card-text">In every programming language, the memory is a vital resource and is also scarce in nature.
+                            Hence it’s essential that the memory is managed thoroughly without any leaks. 
+                            <a href="https://www.geeksforgeeks.org/java-memory-management/"
+                                target="_blank">learn more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="Generics">Generics</h5>
+                        <p class="card-text">Generics in Java with collection classes is very easy but it provides a lot more features than just creating the type of collection.
+                            <a href="https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="JavaNativeInterface(JNI)">Java Native Interface (JNI)</h5>
+                        <p class="card-text">The JNI is a native programming interface. It allows Java code that runs inside a Java Virtual Machine (VM) 
+                            to interoperate with applications and libraries written in other programming languages, such as C, C++, and assembly.
+                            <a href="https://www.baeldung.com/jni" target="_blank"
+                                rel="noopener noreferrer">learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="basic-concepts" class="container">
+            <h2 class="text-7xl font-bold mb-6">Android</h2>
+            <h2 class="text-2xl font-bold mb-2">Basic Concepts</h2>
+            <div class="flex flex-wrap -mx-4 ">
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
+                    <div class="card">
+                        <h5 class="text-xl font-bold mb-4" id="Activities">Activities</h5>
                         <p class="card-text">Activities represent the different screens in an Android application. <a
                                 href="https://developer.android.com/guide/components/activities/intro-activities"
                                 target="_blank">learn more</a></a></p>
@@ -401,7 +545,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Fragments</h5>
+                        <h5 class="text-xl font-bold mb-4" id="Fragments">Fragments</h5>
                         <p class="card-text">Fragments are reusable UI components that can be combined to create
                             flexible layouts. <a href="https://developer.android.com/guide/fragments"
                                 target="_blank">learn more</a></p>
@@ -409,7 +553,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Services</h5>
+                        <h5 class="text-xl font-bold mb-4" id="Services">Services</h5>
                         <p class="card-text">Services are background tasks that run independently of the UI.
                             <a href="https://developer.android.com/develop/background-work/services"
                                 target="_blank">learn more</a>
@@ -420,7 +564,7 @@
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Intents</h5>
+                        <h5 class="text-xl font-bold mb-4" id="Intents">Intents</h5>
                         <p class="card-text">Intents are messages that allow components to request functionality from
                             other components, such as starting an activity, broadcasting a message, or invoking a
                             service. Intents can be explicit (targeting a specific component) or implicit (allowing the
@@ -432,7 +576,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Permissions</h5>
+                        <h5 class="text-xl font-bold mb-4" id="Permissions">Permissions</h5>
                         <p class="card-text">Android apps require permissions to access sensitive device resources like
                             the camera, location, contacts, etc. Developers must declare these permissions in the
                             manifest file and request them at runtime on devices running Android 6.0 (API level 23) or
@@ -444,7 +588,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Adapters and RecyclerViews</h5>
+                        <h5 class="text-xl font-bold mb-4" id="AdaptersandRecyclerViews">Adapters and RecyclerViews</h5>
                         <p class="card-text">Adapters are used to populate views, such as lists or grids, with data from
                             a data source. RecyclerView is a more flexible and efficient replacement for ListView and
                             GridView, commonly used to display large datasets efficiently.
@@ -456,11 +600,11 @@
             </div>
         </section>
         <section id="data-management" class="container">
-            <h2 class="text-3xl font-bold mb-2">Data Management</h2>
+            <h2 class="text-2xl font-bold mb-2">Data Management</h2>
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">SharedPreferences</h5>
+                        <h5 class="text-xl font-bold mb-4" id="SharedPreferences">SharedPreferences</h5>
                         <p class="card-text">SharedPreferences is a lightweight mechanism for storing primitive data
                             types (such as integers, booleans, strings) in key-value pairs. It is commonly used for
                             storing simple app preferences and settings.
@@ -471,7 +615,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">File Storage</h5>
+                        <h5 class="text-xl font-bold mb-4" id="FileStorage">File Storage</h5>
                         <p class="card-text">Android provides APIs for reading from and writing to files in internal and
                             external storage. Internal storage is private to the app and can be used to store sensitive
                             data, while external storage is accessible to other apps and users.
@@ -482,7 +626,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">SQLite Database</h5>
+                        <h5 class="text-xl font-bold mb-4" id="SQLiteDatabase">SQLite Database</h5>
                         <p class="card-text">SQLite is a lightweight relational database management system embedded in
                             Android. It allows developers to create and manage structured data in the form of tables,
                             rows, and columns. SQLite is commonly used for storing structured data locally within an
@@ -496,7 +640,7 @@
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Room Persistence Library</h5>
+                        <h5 class="text-xl font-bold mb-4" id="RoomPersistenceLibrary">Room Persistence Library</h5>
                         <p class="card-text">Room is a SQLite object mapping library provided by the Android Jetpack
                             architecture components. It provides an abstraction layer over SQLite database operations,
                             simplifying database access and management through the use of annotated Java or Kotlin data
@@ -508,7 +652,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Content Providers</h5>
+                        <h5 class="text-xl font-bold mb-4" id="ContentProviders">Content Providers</h5>
                         <p class="card-text">Content Providers are Android components that allow apps to share data with
                             other apps securely. They provide a standard interface for accessing and managing data
                             across different applications and can be used to expose data from SQLite databases or other
@@ -520,7 +664,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mb-8">
                     <div class="card">
-                        <h5 class="text-xl font-bold mb-4">Network Communication</h5>
+                        <h5 class="text-xl font-bold mb-4" id="NetworkCommunication">Network Communication</h5>
                         <p class="card-text">Android apps often need to communicate with remote servers to fetch
                             or send data over the network. This is typically done using HTTP-based networking libraries
                             like Retrofit, Volley, or OkHttp, which handle network requests and responses
@@ -551,6 +695,7 @@
         const sidebarToggle = document.querySelector('.sidebar-toggle');
         const sidebarClose = document.querySelector('.sidebar-close')
         const body = document.querySelector('body');
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
         let scrollPosition = 0;
 
         sidebarToggle.addEventListener('click', (event) => {
@@ -569,6 +714,44 @@
             sidebar.classList.add('-translate-x-full');
             window.scrollTo(0, scrollPosition);
         });
+
+        // Get all sidebar menu items
+        const sidebarMenuItems = document.querySelectorAll('.sidebar-menu a');
+
+                // Add click event listener to each sidebar menu item
+        sidebarMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Close the sidebar
+                sidebar.classList.add('-translate-x-full');
+                // Restore scroll position
+                window.scrollTo(0, scrollPosition- navbarHeight);
+            });
+        });
+
+        sidebarMenuItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                // event.preventDefault();
+
+                // Get target element's position
+                const targetId = item.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = targetPosition - (navbarHeight);
+                    // Close the sidebar
+                    sidebar.classList.add('-translate-x-full');
+
+                    // Scroll to the target position with offset for navbar
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
 
     </script>
 </body>
